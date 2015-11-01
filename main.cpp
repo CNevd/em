@@ -25,7 +25,8 @@ int main()
     const int dim = 3;   //Dimension of feature
     const int cluster_num = 4; //Cluster number
 
-	//Test k-meams
+    //Test k-meams
+    printf("now test Kmeans\n");
     KMeans* kmeans = new KMeans(dim,cluster_num);
     int* labels = new int[size];
     kmeans->SetInitMode(KMeans::InitUniform);
@@ -39,7 +40,8 @@ int main()
 	delete []labels;
 	delete kmeans;
 
-	/*
+	
+
     double test_data[4][3] = {
         0.1, 0.2, 0.3,
         0.4, 0.5, 0.6,
@@ -47,24 +49,23 @@ int main()
         10.3, 10.4, 10.5
     };
 
-	//Test GMM
-    GMM *gmm = new GMM(dim,3); //GMM has 3 SGM
-    gmm->Train(data,size); //Training GMM
+    //Test GMM
+    printf("now test GMM\n");
+    GMM *gmm = new GMM(dim, 3); //GMM has 3 SGM
+    gmm->Train("data.txt"); //Training GMM
 
     printf("\nTest GMM:\n");
-    for(int i = 0; i < 4; ++i)
-	{
-	    printf("The Probability of %f, %f, %f  is %f \n",test_data[i][0],test_data[i][1],test_data[i][2],gmm->GetProbability(test_data[i]));
+    for(int i = 0; i < 4; ++i){
+	printf("The Probability of %f, %f, %f  is %f \n",test_data[i][0],test_data[i][1],test_data[i][2],gmm->GetProbability(test_data[i]));
 	}
 
     //save GMM to file
-	ofstream gmm_file("gmm.txt");
-	assert(gmm_file);
-	gmm_file<<*gmm;
-	gmm_file.close();
+    ofstream gmm_file("gmm.txt");
+    assert(gmm_file);
+    gmm_file<<*gmm;
+    gmm_file.close();
 
-	delete gmm;
-	*/
+    delete gmm;
 
     getchar();
     return 0;
