@@ -1,4 +1,5 @@
-#pragma once
+#ifndef KMEANS_H_
+#define KMEANS_H_
 
 #include <fstream>
 #include <stdlib.h>
@@ -298,6 +299,7 @@ void KMeans::Cluster(const char* sampleFileName, const char* labelFileName)
 	int dim = 0;
 	sampleFile.read((char*)&size, sizeof(int));
 	sampleFile.read((char*)&dim, sizeof(int));
+	printf("size=%d, dim=%d",size,dim);
 	assert(size >= m_cateNum);
 	assert(dim == m_dimNum);
 
@@ -403,3 +405,5 @@ void KMeans::Cluster(const char* sampleFileName, const char* labelFileName)
 
 
 }//end namespace em
+
+#endif

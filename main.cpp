@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include "KMeans.h"
 #include "GMM.h"
 using namespace std;
 using namespace em;
@@ -57,7 +56,7 @@ int main()
     printf("\nTest GMM:\n");
     for(int i = 0; i < 4; ++i){
 	printf("The Probability of %f, %f, %f  is %f \n",test_data[i][0],test_data[i][1],test_data[i][2],gmm->GetProbability(test_data[i]));
-	}
+    }
 
     //save GMM to file
     ofstream gmm_file("gmm.txt");

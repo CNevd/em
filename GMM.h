@@ -1,4 +1,6 @@
-#pragma once
+#ifndef GMM_H_
+#define GMM_H_
+
 #include <fstream>
 #include <math.h>
 #include <iostream>
@@ -423,3 +425,5 @@ void GMM::Train(const char* sampleFileName)
 
 
 } //end namespace em
+
+#endif
