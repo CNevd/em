@@ -1,4 +1,6 @@
-#pragma once
+#ifndef EM_H_
+#define EM_H_
+
 #include <iostream>
 #include <assert.h>
 
@@ -34,3 +36,5 @@ namespace em{
 
 	};
 }//end namespace em
+
+#endif
